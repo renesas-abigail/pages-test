@@ -1,3 +1,13 @@
-<body>
-  <h1>This is a landing page</h1>
-</body>
+<label for="versionSelector">Project Version:</label>
+<select id="versionSelector" onchange="redirectToVersion()">
+  <option value="v2.0.0/index.html">v2.0.0 (Latest)</option>
+  <option value="v1.0.0/index.html">v1.0.0</option>
+</select>
+
+<script>
+  function redirectToVersion() {
+    var selector = document.getElementById("versionSelector");
+    var selectedValue = selector.options[selector.selectedIndex].value;
+    window.location.href = selectedValue;
+  }
+</script>
